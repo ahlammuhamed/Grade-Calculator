@@ -52,7 +52,7 @@ def app():
     if st.button("Calculate"):
         fails = len([d for d in degrees if d < 50])
         if fails >= 2:
-            st.markdown("<p class='center-output'>You are failed!</p>")
+            st.markdown("<p class='center-output'>You are failed!</p>", unsafe_allow_html=True)
         else:
             avg = round(statistics.mean(degrees), 2)
             st.write(f"Your Average degrees: {avg}")
